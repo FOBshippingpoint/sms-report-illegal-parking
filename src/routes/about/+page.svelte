@@ -1,26 +1,32 @@
+<script>
+  import { UnorderedList, ListItem } from "carbon-components-svelte";
+  import { Grid, Row, Column } from "carbon-components-svelte";
+</script>
+
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
+	<title>關於違停簡訊報案助手</title>
+	<meta name="description" content="關於違停簡訊報案助手" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+<Grid padding>
+  <Row>
+    <Column>
+      <h2>關於這個網站</h2>
+    </Column>
+  </Row>
+  <Row noGutter>
+    <Column>
+      <p><a href='https://police-remoter.netlify.app/'>遙控報案大師</a>的克隆版，特色：</p>
+    </Column>
+  </Row>
+  <Row>
+    <Column>
+  <UnorderedList>
+    <ListItem>使用Google Geocoding API</ListItem>
+    <ListItem>隨時儲存簡訊進度至local storage</ListItem>
+    <ListItem>可為熱點儲存常用簡訊供重複使用</ListItem>
+    <ListItem>可自訂結尾簽名檔</ListItem>
+  </UnorderedList>
+    </Column>
+  </Row>
+</Grid>

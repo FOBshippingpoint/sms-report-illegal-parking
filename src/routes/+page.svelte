@@ -19,7 +19,7 @@
   let smsText = ''
 
   function handleSend() {
-    const body = $reportData.smsText ? encodeURIComponent($reportData.smsText): ''
+    const body = smsText ? encodeURIComponent(smsText): ''
     const smsHyperLink = `sms:${$reportData.phoneNumber}?body=${body}`
     window.open(smsHyperLink)
   }

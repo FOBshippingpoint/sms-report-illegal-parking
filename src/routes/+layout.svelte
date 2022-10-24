@@ -9,7 +9,7 @@
   } from "carbon-components-svelte";
   import SettingsAdjust from "carbon-icons-svelte/lib/SettingsAdjust.svelte";
   import PhoneOutgoing from "carbon-icons-svelte/lib/PhoneOutgoing.svelte";
-
+  import Information from "carbon-icons-svelte/lib/Information.svelte";
 </script>
 
 <div class="app">
@@ -25,6 +25,10 @@
     <HeaderActionLink
       href="/options"
       icon={SettingsAdjust}
+    />
+    <HeaderActionLink
+      href="/about"
+      icon={Information}
     />
   </HeaderUtilities>
 </Header>
