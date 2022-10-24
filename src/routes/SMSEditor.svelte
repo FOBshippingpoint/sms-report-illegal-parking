@@ -1,28 +1,11 @@
 <script lang="ts">
 	import { TextArea } from 'carbon-components-svelte';
   import { reportData } from '$lib/report-data';
+//  import { smsText } from '$lib/sms-text';
 
   let value = ''
-  let isInputing = false
-
-  // user input change sms text
-  $: if (isInputing) {
-    reportData.update((old) => {
-      return { ...old, smsText: value }
-    })
-  }
-
-  reportData.subscribe((val) => {
-    if (isInputing) return
-    if (val.smsText === null) return
-    if (val.smsText === value) return
-    value = val.smsText
-  })
-
-  // change value based on other attribute's change
-  $: if (!isInputing) {
-    value = generateSMSText($reportData)
-  }
+  export let smsText
+//  let loadTimes = 0
 
   function generateSMSText(data) {
     let text = ''
@@ -42,6 +25,28 @@
     return text
   }
 
+  reportData.subscribe((val) => {
+    value = generateSMSText(val)
+  })
+
+  $: smsText = value
+
+//  smsText.subscribe((val) => {
+//    value = val
+//  })
+//
+//  $: smsText.set(value)
+//
+//  reportData.subscribe((val) => {
+//    console.log('hello')
+//    if (loadTimes < Object.keys($reportData).length - 2) {
+//      loadTimes++
+//      return
+//    } else {
+//      smsText.set(generateSMSText(val))
+//    }
+//    smsText.set(generateSMSText(val))
+//  })
 </script>
 
-<TextArea rows={6} on:blur={() => isInputing = false} on:focus={() => isInputing = true} labelText="簡訊" placeholder="..." bind:value />
+<TextArea rows={6} labelText="簡訊" placeholder="..." bind:value />

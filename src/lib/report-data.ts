@@ -11,7 +11,6 @@ let defaultValue = {
   vehicles: null,
   imageURLs: null,
   signature: null,
-  smsText: null,
 };
 
 // ensure this only runs in the browser

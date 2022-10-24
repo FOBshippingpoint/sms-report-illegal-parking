@@ -1,4 +1,8 @@
 <script>
+  import { Button } from 'carbon-components-svelte';
+	import { Grid, Row, Column } from 'carbon-components-svelte';
+  import { InlineNotification } from "carbon-components-svelte";
+  import SendFilled from "carbon-icons-svelte/lib/SendFilled.svelte";
 	import SMSInfo from './SMSInfo.svelte';
 	import SMSEditor from './SMSEditor.svelte';
 	import Address from './Address.svelte';
@@ -8,14 +12,11 @@
 	import ImageUpload from './ImageUpload.svelte';
 	import CommonlyUsed from './CommonlyUsed.svelte';
 	import SelectCommonlyUsed from './SelectCommonlyUsed.svelte';
-  import { Button } from 'carbon-components-svelte';
-	import { Grid, Row, Column } from 'carbon-components-svelte';
-  import SendFilled from "carbon-icons-svelte/lib/SendFilled.svelte";
-  import { InlineNotification } from "carbon-components-svelte";
   import { reportData } from "$lib/report-data";
 
   let errorInfo = ''
   let disabledSend = true
+  let smsText = ''
 
   function handleSend() {
     const body = $reportData.smsText ? encodeURIComponent($reportData.smsText): ''
@@ -24,7 +25,7 @@
   }
 
   // 錯誤檢查
-  $: if ($reportData.smsText === '') {
+  $: if (smsText === '') {
     errorInfo = '簡訊不可為空'
     disabledSend = true
   } else if (!$reportData.phoneNumber) {
@@ -36,7 +37,6 @@
   } else {
     disabledSend = false
   }
-
 </script>
 
 
@@ -48,7 +48,7 @@
 <Grid padding>
   <Row><Column><SelectCommonlyUsed /></Column></Row>
   <SMSInfo />
-  <Row><Column><SMSEditor /></Column></Row>
+  <Row><Column><SMSEditor bind:smsText/></Column></Row>
   <Address />
   <Row><Column><Vehicle /></Column></Row>
   <Row><Column><Situation /></Column></Row>
