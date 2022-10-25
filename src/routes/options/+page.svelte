@@ -16,7 +16,7 @@
 
 	reportData.subscribe((value) => {
 		if (signature === value.signature) return;
-		signature = value.signature;
+		signature = value.signature || '';
 	});
 
 	function handleClick(commonlyUsedKey: string) {

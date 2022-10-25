@@ -22,7 +22,7 @@
 
 	$: reportData.update((old) => {
 		const items_ = selectedIds.map((id) => items.find((item) => item.id === id));
-		let vehicles = items_.map((item) => item.text).join('、');
+		let vehicles = items_.map((item) => item?.text).join('、');
 		if (vehicles === '') {
 			vehicles = '車輛';
 		}

@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { TextArea } from 'carbon-components-svelte';
 	import { reportData } from '$lib/report-data';
+	import type { ReportData } from '$lib/type';
 	//  import { smsText } from '$lib/sms-text';
 
 	let value = '';
 	export let smsText;
 	//  let loadTimes = 0
 
-	function generateSMSText(data) {
+  function generateSMSText(data: ReportData) {
 		let text = '';
 		text += `地點：${data.address}`;
 		text += `\n違規情事：有${data.vehicles}在${data.situation}`;

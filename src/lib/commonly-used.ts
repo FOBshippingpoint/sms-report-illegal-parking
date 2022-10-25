@@ -1,8 +1,9 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
+import type { CommonlyUsed } from '$lib/type';
 
 // create an object w/default values
-let defaultValue = {};
+let defaultValue: CommonlyUsed = {};
 
 // ensure this only runs in the browser
 if (browser) {

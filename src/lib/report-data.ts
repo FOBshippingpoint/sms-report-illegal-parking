@@ -1,8 +1,9 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
+import type { ReportData } from '$lib/type';
 
 // create an object w/default values
-let defaultValue = {
+let defaultValue: ReportData = {
 	address: null,
 	policeDepartment: null,
 	phoneNumber: null,

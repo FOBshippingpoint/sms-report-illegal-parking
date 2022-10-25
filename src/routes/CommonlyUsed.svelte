@@ -5,9 +5,9 @@
 	import { commonlyUsed } from '$lib/commonly-used';
 
 	let open = false;
-	let smsName;
-	let invalidText;
-	let warnText;
+	let smsName: string;
+	let invalidText: string;
+	let warnText: string;
 
 	function handleSave() {
 		commonlyUsed.update((old) => {

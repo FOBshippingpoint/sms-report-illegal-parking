@@ -2,7 +2,7 @@ import { PUBLIC_IMGUR_CLIENT_ID } from '$env/static/public';
 
 const headers = { Authorization: `Client-ID ${PUBLIC_IMGUR_CLIENT_ID}` };
 
-export async function uploadImage(img) {
+export async function uploadImage(img): string | undefined {
 	const formData = new FormData();
 	formData.append('image', img);
 	try {
@@ -32,7 +32,7 @@ export async function checkLimit() {
 		const { data, success, status } = await response.json();
 
 		if (!success) {
-			console.log('Error on checking Imgur credits');
+			console.log('Error on checking Imgur credits', status);
 			return;
 		}
 

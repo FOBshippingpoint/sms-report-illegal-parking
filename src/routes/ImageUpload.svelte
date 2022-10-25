@@ -2,8 +2,13 @@
 	import { FileUploader } from 'carbon-components-svelte';
 	import { uploadImage } from '$lib/imgur';
 	import { reportData } from '$lib/report-data';
-
-	let images = [];
+  
+  type Image = {
+    url: string;
+    file: File;
+  }
+  
+	let images: Image[] = [];
 	let status = 'complete';
 
 	$: if (images.length > 0) {
@@ -13,7 +18,7 @@
 		});
 	}
 
-	function handleAdd(e) {
+  function handleAdd(e) {
 		const files = e.detail;
 		let completed = 0;
 		status = 'uploading';
