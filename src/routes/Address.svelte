@@ -3,6 +3,7 @@
 	import { Button } from 'carbon-components-svelte';
 	import { TextInputSkeleton } from 'carbon-components-svelte';
 	import LocationFilled from 'carbon-icons-svelte/lib/LocationFilled.svelte';
+	import ChoroplethMap from 'carbon-icons-svelte/lib/ChoroplethMap.svelte';
 	import { onMount } from 'svelte';
 	import { Row, Column } from 'carbon-components-svelte';
 	import { reportData } from '$lib/report-data';
@@ -102,10 +103,12 @@
 		if (val.address === null) return;
 		value = val.address;
 	});
+
+	$: googleMapSearchURL = 'https://www.google.com/maps/search/' + encodeURIComponent(value);
 </script>
 
 <Row>
-	<Column lg={11}>
+	<Column lg={16}>
 		{#if !disabled}
 			<TextInput placeholder="輸入地址..." bind:value />
 		{:else}
@@ -115,6 +118,17 @@
 	<Column lg={5}>
 		<Button kind="secondary" size="field" icon={LocationFilled} on:click={locating} {disabled}
 			>{text}</Button
+		>
+	</Column>
+	<Column lg={5}>
+		<Button
+			kind="tertiary"
+			size="field"
+			icon={ChoroplethMap}
+			on:click={() => {
+				window.open(googleMapSearchURL, '_blank');
+			}}
+			{disabled}>搜地址</Button
 		>
 	</Column>
 </Row>
