@@ -16,17 +16,31 @@
 	</Row>
 	<Row noGutter>
 		<Column>
-			<p><a href="https://police-remoter.netlify.app/">遙控報案大師</a>的克隆版，特色：</p>
+			<p>
+				此網站是受<a href="https://police-remoter.netlify.app/">遙控報案大師</a
+				>啟發而誕生的克隆版，加了一些功能：
+			</p>
 		</Column>
 	</Row>
 	<Row>
 		<Column>
 			<UnorderedList>
-				<ListItem>使用Google Geocoding API</ListItem>
-				<ListItem>隨時儲存簡訊進度至local storage</ListItem>
+				<ListItem>使用 Google Geocoding API，應該比 OpenStreetMap 的地址更準確</ListItem>
+				<ListItem>隨時自動儲存簡訊進度至 local storage (瀏覽器內建的儲存空間)</ListItem>
 				<ListItem>可為熱點儲存常用簡訊供重複使用</ListItem>
 				<ListItem>可自訂結尾簽名檔</ListItem>
 			</UnorderedList>
+		</Column>
+	</Row>
+	<Row noGutter>
+		<Column>
+			<a href="https://github.com/FOBshippingpoint/sms-report-illegal-parking/issues">BUG 回報</a>
+		</Column>
+		<Column>
+			<a href="https://github.com/FOBshippingpoint/sms-report-illegal-parking">開源程式碼</a>
+		</Column>
+		<Column>
+			<a href="https://www.168bearsafety.com/">交通安全部落格</a>
 		</Column>
 	</Row>
 </Grid>
