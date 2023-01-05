@@ -110,17 +110,17 @@
 <Row>
 	<Column lg={16}>
 		{#if !disabled}
-			<TextInput placeholder="輸入地址..." bind:value />
+			<TextInput labelText="地址" placeholder="輸入地址..." bind:value />
 		{:else}
-			<TextInputSkeleton hideLabel />
+			<TextInputSkeleton />
 		{/if}
 	</Column>
-	<Column lg={5}>
+	<Column>
 		<Button kind="secondary" size="field" icon={LocationFilled} on:click={locating} {disabled}
 			>{text}</Button
 		>
 	</Column>
-	<Column lg={5}>
+	<Column>
 		<Button
 			kind="tertiary"
 			size="field"
