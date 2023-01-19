@@ -13,6 +13,7 @@
 	import CommonlyUsed from './CommonlyUsed.svelte';
 	import SelectCommonlyUsed from './SelectCommonlyUsed.svelte';
 	import { reportData } from '$lib/report-data';
+	import { getMobileOperatingSystem } from '$lib/get-mobile-operating-system';
 
 	let errorInfo = '';
 	let disabledSend = true;
@@ -20,7 +21,8 @@
 
 	function handleSend() {
 		const body = smsText ? encodeURIComponent(smsText) : '';
-		const smsHyperLink = `sms:${$reportData.phoneNumber}?body=${body}`;
+		const bodyPrefix = getMobileOperatingSystem() == 'iOS' ? '&' : '?';
+		const smsHyperLink = `sms://${$reportData.phoneNumber}/${bodyPrefix}body=${body}`;
 		window.open(smsHyperLink);
 	}
 
