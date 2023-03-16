@@ -10,6 +10,10 @@
 	import SettingsAdjust from 'carbon-icons-svelte/lib/SettingsAdjust.svelte';
 	import PhoneOutgoing from 'carbon-icons-svelte/lib/PhoneOutgoing.svelte';
 	import Information from 'carbon-icons-svelte/lib/Information.svelte';
+  import { dev } from '$app/environment';
+  import { inject } from '@vercel/analytics';
+   
+  inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <div class="app">

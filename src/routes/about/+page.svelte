@@ -34,13 +34,10 @@
 	</Row>
 	<Row noGutter>
 		<Column>
-			<a href="https://github.com/FOBshippingpoint/sms-report-illegal-parking/issues">BUG 回報</a>
+			<a href="https://forms.gle/MksKdBtej4wkeXeR9">意見回饋</a>
 		</Column>
 		<Column>
 			<a href="https://github.com/FOBshippingpoint/sms-report-illegal-parking">開源程式碼</a>
-		</Column>
-		<Column>
-			<a href="https://www.168bearsafety.com/">交通安全部落格</a>
 		</Column>
 	</Row>
 </Grid>

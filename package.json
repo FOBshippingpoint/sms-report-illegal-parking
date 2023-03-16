@@ -40,5 +40,8 @@
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
+	},
+	"dependencies": {
+		"@vercel/analytics": "^0.1.11"
 	}
 }
